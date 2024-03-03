@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appServicePlanName": {
+      "value": "teamRockstar-dev-plan"
+    },
+    "webAppName": {
+      "value": "teamRockstar-dev-app"
+    },
+    "skuName": {
+      "value": "F1"
+    },
+    "javaVersion": {
+      "value": "17"
+    },
+    "javaContainer": {
+      "value": "JAVA"
+    },
+    "javaContainerVersion": {
+      "value": "SE"
+    }
+  }
+}

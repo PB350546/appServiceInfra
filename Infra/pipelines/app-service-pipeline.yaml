@@ -1,0 +1,40 @@
+name: AppService Deployment Pipeline
+
+trigger: none
+
+parameters:
+- name: environment
+  displayName: 'Environment'
+  type: string
+  values:
+  - dev
+  - test
+  - prod
+  default: dev
+
+# This parameter will override the value present in parameters file & can be helpful in case you need to create multiple webapps.
+- name: webAppName
+  displayName: 'Enter the webapp name'
+  type: string
+  default: teamRockstar-dev-app
+
+variables:
+- template: ../variables/${{ parameters.environment }}.vars.yaml
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: Deploy appservice - ${{ parameters.environment }}
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: ${{ variables.serviceConnectionName }}
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: ${{ variables.resourceGroupName }}
+    location: 'WestEurope' 
+    templateLocation: 'Linked artifact'
+    csmFile: '../templates/app-service.bicep' 
+    csmParametersFile: '../parameters/app-service.${{parameters.environment}}.parameters.json'
+    deploymentMode: 'Incremental'
+    overrideParameters: 'webAppName ${{parameters.webAppName}}' # This will override the value present in parameters file
