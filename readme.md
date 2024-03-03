@@ -4,7 +4,7 @@
 
 ## About : 
 
-This project enables users to deploy Appservice on their Azure environment. The project is based on infrastructure as a code (IAAC).
+This project enables users to deploy Appservice on their Azure environment. The project is based on infrastructure as a code (IaaC).
 
 ## Structural definition of the project :
 - **templates**: This folder consist of the bicep template corresponding to Appseervice code.
