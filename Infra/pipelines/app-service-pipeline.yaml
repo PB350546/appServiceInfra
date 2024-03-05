@@ -61,7 +61,7 @@ stages:
           az deployment group validate \
           --resource-group ${{ variables.resourceGroupName }} \
           --template-file '$(Build.SourceDirectory)/Infra/templates/app-service.bicep' \
-          --parameters '$(Build.SourceDirectory)/Infra/parameters/app-service.${{parameters.environment}}.parameters.json'
+          --parameters '$(Build.SourceDirectory)/Infra/parameters/app-service.${{ parameters.environment }}.parameters.json'
 
 #####################################################################
 # Stage : Infrastructure Deployment
@@ -86,11 +86,12 @@ stages:
         location: 'WestEurope' 
         templateLocation: 'Linked artifact'
         csmFile: '../templates/app-service.bicep' 
-        csmParametersFile: '../parameters/app-service.${{parameters.environment}}.parameters.json'
+        csmParametersFile: '../parameters/app-service.${{ parameters.environment }}.parameters.json'
         deploymentMode: 'Incremental'
         deploymentOutputs: 'resourceGroupDeploymentOutputs' # The bicep output will be passed on to the task output and can be used later in pipeline.
-        overrideParameters: 'webAppName ${{parameters.webAppName}}' # This will override the value present in parameters file
+        overrideParameters: 'webAppName ${{ parameters.webAppName }}' # This will override the value present in parameters file
 
+    # This task will convert the bicep outputs into pipeline variables.
     - powershell: |
         if (('$(resourceGroupDeploymentOutputs)').count -eq 0) {
           Exit 0
