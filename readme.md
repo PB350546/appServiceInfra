@@ -7,10 +7,10 @@
 This project enables users to deploy Appservice on their Azure environment. The project is based on infrastructure as code (IaC).
 
 ## Structural definition of the project :
-- **Infra\templates**: This folder consists of the bicep template corresponding to Appservice code.
-- **Infra\parameters** : This folder contains the parameter files of each environment used by the bicep template to generate the web app.
-- **Infra\pipelines** : This folder consists of the deployment pipeline that is responsible for creation of the web app.
-- **Infra\variables** : This folder contains the global variables which are not restricted to type of resource and are specific to each environment.
+- **Infra/templates**: This folder consists of the bicep template corresponding to Appservice code.
+- **Infra/parameters** : This folder contains the parameter files of each environment used by the bicep template to generate the web app.
+- **Infra/pipelines** : This folder consists of the deployment pipeline that is responsible for creation of the web app.
+- **Infra/variables** : This folder contains the global variables which are not restricted to type of resource and are specific to each environment.
 
 ## How to create app service (web app) infra : 
 - Create the pipeline in Azure DevOps.
