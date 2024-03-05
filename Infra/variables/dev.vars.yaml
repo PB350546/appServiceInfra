@@ -1,3 +1,5 @@
 # General Variables : 
 serviceConnectionName : teamRockstar-dev-serviceConnection
 resourceGroupName : teamRockstar-dev-resourceGroup
+subscriptionName: teamRockstar-dev-subscription
+subscriptionId: 0b1f6471-1bf0-4dda-aec3-111111111111

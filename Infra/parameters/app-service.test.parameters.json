@@ -11,14 +11,11 @@
     "skuName": {
       "value": "F1"
     },
-    "javaVersion": {
-      "value": "17"
+    "zoneRedundant": {
+      "value": false
     },
-    "javaContainer": {
-      "value": "JAVA"
-    },
-    "javaContainerVersion": {
-      "value": "SE"
+    "applicationInsightsName": {
+      "value": "teamRockstar-test-ai"
     }
   }
 }
