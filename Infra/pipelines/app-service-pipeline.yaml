@@ -49,7 +49,7 @@ stages:
         inlineScript: |
           az bicep build --file '$(Build.SourceDirectory)/Infra/templates/app-service.bicep'
 
-    # This task will perform a dryrun deployment to check the authentticiauthenticity of the code.    
+    # This task will perform a dryrun deployment to check the authenticity of the code.    
     - task: AzureCLI@2
       name: RunDeploymentValidationInfraBicep
       displayName: Deployment validation Infra Bicep - ${{ parameters.environment }}
