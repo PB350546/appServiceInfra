@@ -87,7 +87,7 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
   kind: appServiceKind
   location: location
   identity: {
-    type: 'SystemAssigned, UserAssigned' 
+    type: 'SystemAssigned, UserAssigned'  //You can also have one of them as identity based on your requirement.
   }
   properties: {
     serverFarmId: appServicePlan.id
@@ -97,9 +97,9 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
       javaContainer: javaContainer
       javaContainerVersion: javaContainerVersion
       publicNetworkAccess: publicNetworkAccess
-      ipSecurityRestrictions: ipSecurityRestrictions
+      ipSecurityRestrictions: ipSecurityRestrictions  // you can use this to restrict access to limited ips or CIDR ranges.
       appSettings: [
-        // This is how you can link your appservice to application insights. Similarly you can also integrate DB, Storage etc.
+        // This is how you can link your appservice to application insights.
         {
           name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
           value: reference('microsoft.insights/components/${applicationInsightsName}', '2015-05-01').ConnectionString
@@ -116,3 +116,4 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
 // output the resources name
 output planName string = appServicePlan.name
 output webAppName string = webApp.name
+// you can aslo output other properties or entire object based on your requirement to use further.

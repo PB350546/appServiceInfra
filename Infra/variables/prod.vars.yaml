@@ -1,5 +1,6 @@
 # General Variables : 
-serviceConnectionName : teamRockstar-prod-serviceConnection
-resourceGroupName : teamRockstar-prod-resourceGroup
-subscriptionName: teamRockstar-prod-subscription
-subscriptionId: 0b1f6471-1bf0-4dda-aec3-111111111112
+variables:
+  serviceConnectionName : teamRockstar-prod-serviceConnection
+  resourceGroupName : teamRockstar-prod-resourceGroup
+  subscriptionName: teamRockstar-prod-subscription
+  subscriptionId: 0b1f6471-1bf0-4dda-aec3-111111111112

@@ -13,8 +13,13 @@ This project enables users to deploy Appservice on their Azure environment. The 
 - **Infra/variables** : This folder contains the global variables which are not restricted to type of resource and are specific to each environment.
 
 ## How to create app service (web app) infra : 
-- Create the pipeline in Azure DevOps.
-- Run the pipeline: You need to select the environment and provide the name of the app to be created.
+1. Prerequisites : 
+    - Azure Subscription
+    - Azure Resource Group
+    - Azure DevOps Service Connection with spn having required roles on Resource Group
+    - Basic understanding of Azure Pipelines, Bicep (IAC).
+2. Create the pipeline in Azure DevOps.
+3. Run the pipeline: You need to select the environment and provide the name of the app to be created.
 
 ## Diagram : 
 

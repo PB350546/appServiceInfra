@@ -1,5 +1,6 @@
 # General Variables : 
-serviceConnectionName : teamRockstar-test-serviceConnection
-resourceGroupName : teamRockstar-test-resourceGroup
-subscriptionName: teamRockstar-test-subscription
-subscriptionId: 0b1f6471-1bf0-4dda-aec3-111111111113
+variables:
+  serviceConnectionName : teamRockstar-test-serviceConnection
+  resourceGroupName : teamRockstar-test-resourceGroup
+  subscriptionName: teamRockstar-test-subscription
+  subscriptionId: 0b1f6471-1bf0-4dda-aec3-111111111113
